@@ -1,4 +1,4 @@
-import { validateToken } from "../helpers/jwt.helpers.js";
+import { validateToken } from "../helpers/jwt.helper.js";
 
 export const authMiddleware = (req, res, next) => {
     try {
