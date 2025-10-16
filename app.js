@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { UserModel } from "./src/models/usuario.model.js";
 import { ProgresoModel } from "./src/models/progreso.js";
+import { EjercicioModel } from "./src/models/ejercicio.js";
+import { EstudianteModel } from "./src/models/estudiante.js";
 //import { routes } from "./src/routes/index.js";
 
 const app = express();
