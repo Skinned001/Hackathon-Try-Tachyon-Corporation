@@ -6,7 +6,6 @@ import { hashPassword, comparePassword } from "../helpers/bcrypt.helper.js";
 export const register = async (req, res) => {
     const { username, email, password, role } = req.body;
     try {
-        // TODO: crear usuario con password hasheada y profile embebido
         const hashedPassword = await hashPassword(password);
         const newUser = await UserModel.create({
             username,
@@ -22,25 +21,51 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
+
+    // 📌 DEBUG: Ver qué datos llegan del frontend
+    console.log("📥 Datos recibidos en LOGIN:", req.body);
+
     try {
-        // TODO: buscar user, validar password, firmar JWT y setear cookie httpOnly
-        const loginUser = await UserModel.findOne({ username: username });
-        const validPassword = await comparePassword(password, loginUser.password);
-        if (!validPassword) {
-            return res.status(401).json("Credenciales invalidas");
+        const loginUser = await UserModel.findOne({ email });
+
+        if (!loginUser) {
+            console.warn("⚠️ Usuario no encontrado con email:", email);
+            return res.status(401).json({ msg: "Usuario no encontrado" });
         }
-        const token = signToken(loginUser);
+
+        console.log("👤 Usuario encontrado:", loginUser.email);
+
+        const validPassword = await comparePassword(password, loginUser.password);
+
+        // 📌 DEBUG: mostrar resultado de comparación
+        console.log("🔑 Contraseña ingresada:", password);
+        console.log("🔐 Hash guardado:", loginUser.password);
+        console.log("✅ ¿Password válida?:", validPassword);
+
+        if (!validPassword) {
+            console.warn("⚠️ Contraseña incorrecta para:", email);
+            return res.status(401).json({ msg: "Credenciales inválidas" });
+        }
+
+        const token = generateToken(loginUser);
+        console.log("🎫 Token generado:", token);
+
         res.cookie("token", token, {
-            hhtpOnly: true,
+            httpOnly: true, // corregido
             maxAge: 1000 * 60 * 60,
         });
-        return res.status(200).json({ msg: "Usuario logueado correctamente" });
+
+        return res.status(200).json({
+            msg: "Usuario logueado correctamente",
+            token,
+        });
     } catch (error) {
-        console.log(error);
+        console.error("❌ Error en login:", error);
         return res.status(500).json({ msg: "Error interno del servidor" });
     }
 };
+
 
 export const getProfile = async (req, res) => {
     try {

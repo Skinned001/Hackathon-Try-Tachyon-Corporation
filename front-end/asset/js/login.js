@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Enviamos los datos al servidor local
     try {
       // ¡IMPORTANTE! Reemplaza esta URL con tu endpoint de login // Ejemplo de URL
-      const respuesta = await fetch("http://localhost:5000/api/login", {
+      const respuesta = await fetch("http://localhost:3008/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
