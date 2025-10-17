@@ -4,7 +4,7 @@ import { hashPassword, comparePassword } from "../helpers/bcrypt.helper.js";
 
 
 export const register = async (req, res) => {
-    const { username, email, password, role, profile } = req.body;
+    const { username, email, password, role } = req.body;
     try {
         // TODO: crear usuario con password hasheada y profile embebido
         const hashedPassword = await hashPassword(password);
@@ -12,8 +12,7 @@ export const register = async (req, res) => {
             username,
             email,
             password: hashedPassword,
-            role,
-            profile
+            role
         });
         return res.status(201).json({ msg: "Usuario registrado correctamente", newUser });
     } catch (error) {

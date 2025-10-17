@@ -1,0 +1,174 @@
+/* --- Paleta de Colores y Variables --- */
+:root {
+    --primary-color: #3a86ff;      /* Azul amigable y moderno */
+    --accent-color: #ffbe0b;       /* Naranja/Amarillo vibrante para acciones */
+    --background-color: #f0f4f8;   /* Gris azulado muy claro para el fondo */
+    --card-background: #ffffff;    /* Blanco puro para la tarjeta */
+    --text-color: #333d4b;         /* Gris oscuro para el texto principal */
+    --text-light-color: #6b7280;   /* Gris más claro para subtítulos */
+    --border-color: #d1d5db;       /* Gris claro para bordes de inputs */
+    --success-color: #10b981;      /* Verde para feedback positivo */
+    --error-color: #ef4444;        /* Rojo para errores */
+}
+
+/* --- Estilos Generales y de Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* oscurece para legibilidad */
+        url("asset/img/background.jpg") no-repeat center center fixed; /* tu imagen */
+    background-size: cover; /* que ocupe todo */
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Contenedor Principal --- */
+.register-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.register-card {
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.register-card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.register-card > p {
+    color: var(--text-light-color);
+    margin-bottom: 30px;
+}
+
+/* --- Grupo de Inputs del Formulario --- */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #a0aec0;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+}
+
+/* --- Botones --- */
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #ffca3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 190, 11, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #f7f7f7;
+    border-color: #b3b3b3;
+}
+
+/* --- Divisor "o" --- */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light-color);
+    margin: 30px 0;
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.divider:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .25em;
+}
+
+/* --- Enlace de Inicio de Sesión --- */
+.login-link {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: var(--text-light-color);
+}
+
+.login-link a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

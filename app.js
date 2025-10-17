@@ -12,7 +12,8 @@ import { routes } from "./src/routes/index.js";
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: ["http://127.0.0.1:5500", "http://localhost:3008"], 
+    credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
