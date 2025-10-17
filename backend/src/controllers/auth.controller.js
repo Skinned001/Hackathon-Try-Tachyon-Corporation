@@ -24,10 +24,10 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
     // TODO: buscar user, validar password, firmar JWT y setear cookie httpOnly
-    const loginUser = await UserModel.findOne({ username: username });
+    const loginUser = await UserModel.findOne({ email: email });
     const validPassword = await comparePassword(password, loginUser.password);
     if (!validPassword) {
       return res.status(401).json("Credenciales invalidas");

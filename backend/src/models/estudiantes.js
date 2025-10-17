@@ -27,9 +27,6 @@ export const EstudianteModel = sequelize.define(
     },
   },
   {
-    tableName: "estudiantes",
-  },
-  {
     paranoid: true,
   }
 );
