@@ -1,7 +1,7 @@
 /* --- Paleta de Colores y Variables --- */
 :root {
     --primary-color: #3a86ff;      /* Azul amigable y moderno */
-    --accent-color: #00796b;       /* Naranja/Amarillo vibrante para acciones */
+    --accent-color: #06a895;       /* Naranja/Amarillo vibrante para acciones */
     --background-color: #f0f4f8;   /* Gris azulado muy claro para el fondo */
     --card-background: #ffffff;    /* Blanco puro para la tarjeta */
     --text-color: #333d4b;         /* Gris oscuro para el texto principal */
@@ -30,14 +30,13 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-
 /* --- Contenedor Principal --- */
-.register-container {
+.login-container {
     width: 100%;
     max-width: 450px;
 }
 
-.register-card {
+.login-card {
     background-color: var(--card-background);
     padding: 40px;
     border-radius: 20px;
@@ -45,7 +44,7 @@ body {
     text-align: center;
 }
 
-.register-card h1 {
+.login-card h1 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -53,7 +52,7 @@ body {
     margin-bottom: 10px;
 }
 
-.register-card > p {
+.login-card > p {
     color: var(--text-light-color);
     margin-bottom: 30px;
 }
@@ -109,15 +108,15 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
-    color: var(--text-color);
+    background-color: var(--primary-color);
+    color: #ffffff;
     margin-top: 10px;
 }
 
 .btn-primary:hover {
-    background-color: #ffca3a;
+    background-color: #3275e0;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(255, 190, 11, 0.3);
+    box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
 }
 
 .btn-secondary {
@@ -156,19 +155,38 @@ body {
     margin-left: .25em;
 }
 
-/* --- Enlace de Inicio de Sesión --- */
-.login-link {
+/* --- Enlace de Registro --- */
+.register-link {
     margin-top: 30px;
     font-size: 0.9rem;
     color: var(--text-light-color);
 }
 
-.login-link a {
+.register-link a {
     color: var(--primary-color);
     font-weight: 600;
     text-decoration: none;
 }
 
-.login-link a:hover {
+.register-link a:hover {
     text-decoration: underline;
+}
+
+/* --- Mensajes de Feedback --- */
+#mensaje {
+    margin-top: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    display: none; /* Oculto por defecto */
+}
+#mensaje.exito {
+    color: var(--success-color);
+    background-color: #d1fae5;
+    display: block;
+}
+#mensaje.error {
+    color: var(--error-color);
+    background-color: #fee2e2;
+    display: block;
 }
