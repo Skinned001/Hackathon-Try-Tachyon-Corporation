@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Principal con Perfil de Usuario</title>
+    <link rel="stylesheet" href="mainMenu.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">AprenderJuntos</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#" class="active">Inicio</a></li>
+          <li><a href="menuEjercicios.html">Ejercicios</a></li>
+          <li><a href="#">Material de Lectura</a></li>
+          <li><a href="#">Práctica</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a id="profileLink">Perfil</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <div class="container">
+        <h1 id="welcomeMessage">Bienvenido a nuestro portal educativo</h1>
+        <p>
+          Explora nuestros recursos de aprendizaje, ejercicios prácticos y
+          materiales de lectura para mejorar tus habilidades.
+        </p>
+        <a href="#" class="btn">Comenzar ahora</a>
+      </div>
+    </div>
+
+    <div id="profileModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h2>Mi Perfil</h2>
+        <form id="profileForm">
+          <div class="form-group">
+            <label for="profileName">Nombre:</label>
+            <input type="text" id="profileName" required />
+          </div>
+          <div class="form-group">
+            <label for="newPassword">Nueva Contraseña (opcional):</label>
+            <input
+              type="password"
+              id="newPassword"
+              placeholder="Deja en blanco para no cambiar"
+            />
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Repite la nueva contraseña"
+            />
+          </div>
+          <button type="submit" class="btn">Guardar Cambios</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="asset/js/mainMenu.js"></script>
+  </body>
+</html>

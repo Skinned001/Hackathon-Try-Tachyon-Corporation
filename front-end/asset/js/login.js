@@ -45,13 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Opcional: Redirigir al usuario a una página de bienvenida o al dashboard
         setTimeout(() => {
-          window.location.href = "index.html"; // Cambia a tu página principal
+          window.location.href = "mainMenu.html"; // Cambia a tu página principal
         }, 1500);
       } else {
         // Si las credenciales son incorrectas o hay otro error
-        divMensaje.textContent = `Error: ${
-          resultado.message || "Credenciales incorrectas."
-        }`;
+        divMensaje.textContent = `Error: ${resultado.message || "Credenciales incorrectas."
+          }`;
         divMensaje.className = "error";
       }
     } catch (error) {

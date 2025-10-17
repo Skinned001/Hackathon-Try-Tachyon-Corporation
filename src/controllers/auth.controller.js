@@ -13,11 +13,22 @@ export const register = async (req, res) => {
             password: hashedPassword,
             role
         });
+        const token = generateToken(newUser);
+        res.cookie("token", token, {
+            httpOnly: true,
+            maxAge: 1000 * 60 * 60,
+        });
+        return res.status(201).json({
+            msg: "Usuario registrado correctamente",
+            token,
+        });
         return res.status(201).json({ msg: "Usuario registrado correctamente", newUser });
+
     } catch (error) {
         console.log(error);
         return res.status(500).json({ msg: "Error interno del servidor" });
     }
+
 };
 
 export const login = async (req, res) => {
@@ -61,7 +72,7 @@ export const login = async (req, res) => {
             token,
         });
     } catch (error) {
-        console.error("❌ Error en login:", error);
+        console.error("Error en login:", error);
         return res.status(500).json({ msg: "Error interno del servidor" });
     }
 };

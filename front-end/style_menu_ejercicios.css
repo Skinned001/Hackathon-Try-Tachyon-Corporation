@@ -1,0 +1,138 @@
+/* --- Paleta de Colores y Variables --- */
+:root {
+    --primary-color: #3a86ff;      /* Azul amigable y moderno */
+    --accent-color: #ffbe0b;       /* Naranja/Amarillo vibrante para acciones */
+    --background-color: #f0f4f8;   /* Gris azulado muy claro para el fondo */
+    --card-background: #ffffff;    /* Blanco puro para la tarjeta */
+    --text-color: #333d4b;         /* Gris oscuro para el texto principal */
+    --text-light-color: #6b7280;   /* Gris más claro para subtítulos */
+    --border-color: #d1d5db;       /* Gris claro para bordes de inputs */
+
+    /* Colores específicos para niveles */
+    --beginner-color: #2a9d8f;
+    --intermediate-color: #e76f51;
+    --advanced-color: #8338ec;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* --- Contenedor Principal y Encabezado --- */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--text-light-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Contenedor de las Columnas de Niveles --- */
+.levels-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* --- Estilo de cada Columna de Nivel --- */
+.level-column {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* Para que el header de color no se salga */
+    display: flex;
+    flex-direction: column;
+}
+
+.level-header {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.level-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.level-header span {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Asignando colores a cada nivel */
+.level-header.beginner { background-color: var(--beginner-color); }
+.level-header.intermediate { background-color: var(--intermediate-color); }
+.level-header.advanced { background-color: var(--advanced-color); }
+
+/* --- Contenedor de Botones de Ejercicio --- */
+.exercise-buttons {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.exercise-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.exercise-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(58, 134, 255, 0.2);
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 992px) {
+    .levels-container {
+        grid-template-columns: 1fr; /* Una columna en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .main-container {
+        padding: 20px 15px;
+    }
+    .levels-container {
+        gap: 20px;
+    }
+}
+

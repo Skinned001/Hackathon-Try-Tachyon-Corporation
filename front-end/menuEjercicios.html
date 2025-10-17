@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Ejercicios - Tachyon English</title>
+    <!-- Importante: Asegúrate de que este CSS no entre en conflicto o combina los estilos -->
+    <link rel="stylesheet" href="style_menu_ejercicios.css"> 
+    <link rel="stylesheet" href="mainMenu.css"> <!-- Añadido el CSS del menú principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- === BARRA DE NAVEGACIÓN AÑADIDA === -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">AprenderJuntos</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="mainMenu.html">Inicio</a></li>
+                <!-- Se ha añadido la clase 'active' a este enlace -->
+                <li><a href="menuEjercicios.html" class="active">Ejercicios</a></li>
+                <li><a href="#">Material de Lectura</a></li>
+                <li><a href="#">Práctica</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a id="profileLink">Perfil</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- === FIN DE LA BARRA DE NAVEGACIÓN === -->
+
+    <div class="main-container">
+        <header class="page-header">
+            <h1>Elige tu Nivel de Práctica</h1>
+            <p>Selecciona una categoría para comenzar a mejorar tu inglés.</p>
+        </header>
+
+        <div class="levels-container">
+            <!-- Columna Principiante -->
+            <div class="level-column">
+                <div class="level-header beginner">
+                    <h2>Principiante</h2>
+                    <span>(A1 - A2)</span>
+                </div>
+                <div class="exercise-buttons">
+                    <button class="exercise-btn">Presente Simple</button>
+                    <button class="exercise-btn">Artículos (A/An/The)</button>
+                    <button class="exercise-btn">Sustantivos Plurales</button>
+                    <button class="exercise-btn">Verbo "To Be"</button>
+                    <button class="exercise-btn">Preposiciones de Lugar</button>
+                </div>
+            </div>
+
+            <!-- Columna Intermedio -->
+            <div class="level-column">
+                <div class="level-header intermediate">
+                    <h2>Intermedio</h2>
+                    <span>(B1 - B2)</span>
+                </div>
+                <div class="exercise-buttons">
+                    <button class="exercise-btn">Pasado Continuo</button>
+                    <button class="exercise-btn">Presente Perfecto</button>
+                    <button class="exercise-btn">Verbos Modales</button>
+                    <button class="exercise-btn">Condicionales (Tipo 1 y 2)</button>
+                    <button class="exercise-btn">Voz Pasiva</button>
+                </div>
+            </div>
+
+            <!-- Columna Avanzado -->
+            <div class="level-column">
+                <div class="level-header advanced">
+                    <h2>Avanzado</h2>
+                    <span>(C1 - C2)</span>
+                </div>
+                <div class="exercise-buttons">
+                    <button class="exercise-btn">Futuro Perfecto Continuo</button>
+                    <button class="exercise-btn">Condicionales Mixtos</button>
+                    <button class="exercise-btn">Inversiones</button>
+                    <button class="exercise-btn">Reported Speech (Complejo)</button>
+                    <button class="exercise-btn">Phrasal Verbs Avanzados</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Es posible que necesites el JS del menú para la funcionalidad del perfil y el menú móvil -->
+    <script src="asset/js/mainMenu.js"></script>
+</body>
+</html>
