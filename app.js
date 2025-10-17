@@ -7,7 +7,7 @@ import { UserModel } from "./src/models/usuario.model.js";
 import { ProgresoModel } from "./src/models/progreso.js";
 import { EjercicioModel } from "./src/models/ejercicio.js";
 import { EstudianteModel } from "./src/models/estudiante.js";
-//import { routes } from "./src/routes/index.js";
+import { routes } from "./src/routes/index.js";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -16,7 +16,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-// app.use("/api", routes)
+app.use("/api", routes)
 
 app.listen(PORT, async () => {
     try {

@@ -1,5 +1,5 @@
-import { UserModel } from "../models/mongoose/user.model.js";
-import { signToken } from "../helpers/jwt.helper.js";
+import { UserModel } from "../models/usuario.model.js";
+import { generateToken } from "../helpers/jwt.helper.js";
 import { hashPassword, comparePassword } from "../helpers/bcrypt.helper.js";
 
 
