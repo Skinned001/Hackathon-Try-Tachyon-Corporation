@@ -5,22 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tachyon English Practice</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainMenu.css"> <!-- Estilos para la barra de navegación -->
 </head>
 <body>
 
-    <div class="quiz-container">
-        <div id="quiz-header">
-            <h2 id="question-text">Cargando pregunta...</h2>
-            <p id="concept-info"></p>
+    <!-- === BARRA DE NAVEGACIÓN AÑADIDA === -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">AprenderJuntos</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Inicio</a></li>
+                <!-- Marcamos 'Ejercicios' como la página activa -->
+                <li><a href="menuEjercicios.html" class="active">Ejercicios</a></li>
+                <li><a href="#">Material de Lectura</a></li>
+                <li><a href="#">Práctica</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a id="profileLink">Perfil</a></li>
+            </ul>
         </div>
-        <div id="options-container" class="options-grid">
+    </nav>
+    <!-- === FIN DE LA BARRA DE NAVEGACIÓN === -->
+
+    <!-- Contenedor añadido para centrar el quiz correctamente -->
+    <div class="page-content">
+        <div class="quiz-container">
+            <div id="quiz-header">
+                <h2 id="question-text">Cargando pregunta...</h2>
+                <p id="concept-info"></p>
             </div>
-        <div id="feedback-container">
-            <p id="feedback-text"></p>
+            <div id="options-container" class="options-grid">
+                <!-- Las opciones se generarán aquí con JavaScript -->
+            </div>
+            <div id="feedback-container">
+                <p id="feedback-text"></p>
+            </div>
+            <button id="next-button">Siguiente Ejercicio</button>
         </div>
-        <button id="next-button">Siguiente Ejercicio</button>
     </div>
 
     <script src="./asset/js/app.js"></script>
+    <!-- Script para la funcionalidad del menú (móvil, perfil, etc.) -->
+    <script src="asset/js/mainMenu.js"></script> 
 </body>
 </html>
